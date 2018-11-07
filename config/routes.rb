@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-
-
-  resources :topics do
-  resources :bookmarks
-end
-
   post :incoming, to: 'incoming#create'
 
+  resources :topics do
+    resources :bookmarks, except: [:index]
+  end
 
-  get 'welcome/index'
+  devise_for :users
 
-  get 'welcome/about'
+  get 'about' => 'welcome#about'
 
   root 'welcome#index'
+
 end

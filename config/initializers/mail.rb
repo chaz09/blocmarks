@@ -11,7 +11,3 @@ ActionMailer::Base.delivery_method = :smtp
 
 # Makes debugging *way* easier.
 ActionMailer::Base.raise_delivery_errors = true
-
-# This interceptor just makes sure that local mail
-# only emails you.
-# http://edgeguides.rubyonrails.org/action_mailer_basics.html#intercepting-emails
